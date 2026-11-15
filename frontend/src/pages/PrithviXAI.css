@@ -1,0 +1,384 @@
+
+/* =========================================
+   PRITHVIX AI - MAIN CONTAINER
+========================================= */
+
+.pxai-page {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    min-height: calc(100vh - 145px);
+    color: #183A32;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.pxai-header {
+    min-height: 101px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 27px;
+
+    background: #ffffff;
+    border: 1px solid #d6e3d2;
+    border-radius: 18px;
+
+    box-shadow: 0 2px 4px rgba(24,58,50,0.04);
+}
+
+.pxai-header-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: #2e7045;
+    color: white;
+    border-radius: 14px;
+
+    box-shadow: 0 3px 6px rgba(24,58,50,0.15);
+}
+
+.pxai-header-text {
+    min-width: 0;
+}
+
+.pxai-header-text h2 {
+    margin: 0 0 3px;
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.pxai-header-text p {
+    margin: 0;
+    color: #75847a;
+    font-size: 12px;
+}
+
+.pxai-status {
+    margin-left: auto;
+    flex-shrink: 0;
+
+    padding: 5px 12px;
+
+    background: #e7f6f1;
+    color: #087d68;
+
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* =========================================
+   CHAT WINDOW
+========================================= */
+
+.pxai-chat-window {
+    flex: 1;
+    min-height: 390px;
+
+    max-height: calc(100vh - 310px);
+    overflow-y: auto;
+
+    padding: 27px;
+
+    background: #ffffff;
+    border: 1px solid #d6e3d2;
+    border-radius: 18px;
+
+    box-shadow: 0 2px 4px rgba(24,58,50,0.04);
+}
+
+/* =========================================
+   CHAT MESSAGES
+========================================= */
+
+.pxai-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    margin-bottom: 18px;
+}
+
+.pxai-message.user {
+    flex-direction: row-reverse;
+}
+
+.pxai-avatar {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: white;
+    background: #193A2D;
+
+    border-radius: 13px;
+}
+
+.pxai-message.user .pxai-avatar {
+    background: #347B4C;
+}
+
+/* =========================================
+   MESSAGE BUBBLES
+========================================= */
+
+.pxai-bubble {
+    max-width: min(760px, 86%);
+
+    padding: 17px 19px;
+
+    background: #EAF2EB;
+    border: 1px solid #D5E3D4;
+
+    border-radius: 18px;
+
+    color: #183A32;
+}
+
+.pxai-message.user .pxai-bubble {
+    background: #347B4C;
+    border-color: #347B4C;
+    color: white;
+}
+
+.pxai-bubble p {
+    margin: 0;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+/* =========================================
+   SUGGESTED QUESTIONS
+========================================= */
+
+.pxai-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 16px;
+}
+
+.pxai-suggestions button {
+    padding: 8px 13px;
+
+    background: white;
+    color: #28643E;
+
+    border: 1px solid #D5E3D4;
+    border-radius: 14px;
+
+    font-size: 12px;
+    font-weight: 650;
+
+    transition: 0.2s ease;
+}
+
+.pxai-suggestions button:hover {
+    background: #F4F8F2;
+    border-color: #8EAE91;
+}
+
+.pxai-suggestions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   MESSAGE COMPOSER
+========================================= */
+
+.pxai-composer {
+    display: flex;
+    align-items: stretch;
+    gap: 9px;
+}
+
+.pxai-composer textarea {
+    flex: 1;
+    min-width: 0;
+
+    min-height: 51px;
+    max-height: 130px;
+
+    resize: vertical;
+
+    padding: 15px 18px;
+
+    background: white;
+    color: #183A32;
+
+    border: 1px solid #D6E3D2;
+    border-radius: 14px;
+
+    outline: none;
+}
+
+.pxai-composer textarea:focus {
+    border-color: #6C9B76;
+    box-shadow: 0 0 0 3px rgba(52,123,76,0.1);
+}
+
+.pxai-composer textarea::placeholder {
+    color: #89968D;
+}
+
+/* SEND BUTTON */
+
+.pxai-composer button {
+    min-width: 110px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    padding: 0 20px;
+
+    background: #2E7045;
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    box-shadow: 0 3px 7px rgba(24,58,50,0.15);
+}
+
+.pxai-composer button:hover:not(:disabled) {
+    background: #24583D;
+}
+
+.pxai-composer button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.pxai-error {
+    padding: 11px 14px;
+
+    background: #FFF4F1;
+    color: #9D4036;
+
+    border: 1px solid #F0D1C9;
+    border-radius: 10px;
+
+    font-size: 12px;
+}
+
+/* =========================================
+   LOADING ANIMATION
+========================================= */
+
+.pxai-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    min-width: 65px;
+}
+
+.pxai-typing span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: #64816B;
+
+    animation: pxai-pulse 1s infinite ease-in-out;
+}
+
+.pxai-typing span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.pxai-typing span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes pxai-pulse {
+    0%, 60%, 100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-3px);
+    }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.pxai-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin: -16px 2px 0;
+
+    color: #7C8B80;
+    font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .pxai-page {
+        min-height: calc(100vh - 115px);
+        gap: 14px;
+    }
+
+    .pxai-header {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .pxai-header-text h2 {
+        font-size: 14px;
+    }
+
+    .pxai-header-text p {
+        font-size: 11px;
+    }
+
+    .pxai-status {
+        padding: 4px 7px;
+        font-size: 10px;
+    }
+
+    .pxai-chat-window {
+        min-height: 360px;
+        max-height: none;
+        padding: 17px 12px;
+    }
+
+    .pxai-bubble {
+        max-width: 90%;
+        padding: 13px;
+    }
+
+    .pxai-composer button {
+        min-width: 82px;
+        padding: 0 12px;
+    }
+}
